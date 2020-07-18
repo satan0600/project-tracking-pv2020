@@ -34,7 +34,7 @@ public class TrackingController {
 	@Autowired 
 	IBarrioService barrioService;
 
-	@GetMapping("/trackingForm")
+	@GetMapping("/home")
 	public String trackingForm(Model model) {
 		model.addAttribute("trackingForm", new RegistroTracking());
 		//model.addAttribute("personaList", personaService.getAllPersonas());
