@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<div class="table-responsive">
+	<table id="personaList"
+		class="table table-bordered table-hover table-striped">
+		<thead class="thead-light">
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">apellido</th>
+				<th scope="col">nombre</th>
+				<th scope="col">dni</th>
+				<th scope="col">nacionalidad</th>
+				<th scope="col">nombre</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="persona: ${personaList}">
+				<td th:text="${persona.id}"></td>
+				<td th:text="${persona.apellido}"></td>
+				<td th:text="${persona.nombres}"></td>
+				<td th:text="${persona.documento}"></td>
+				<td th:text="${persona.nacionalidad}"></td>
+				<td><a href="#" th:href="@{'/editPersona/'+ ${persona.id}}"><i
+						class="fas fa-edit"></i></a> |<a href="#"
+					th:onclick="'javascript:confirmDelete(\''+ ${persona.id} +'\');'"><i
+						class="fas fa-times"></i></a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

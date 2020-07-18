@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>registro-tracking</title>
+</head>
+<form class="form" role="form" autocomplete="off" th:object="${trackingForm}" th:action="${editMode} ?@{/editPersona} :@{/PersonaForm}" method="post">
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">nombre</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text" >
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">apellido</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text" >
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">dni</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="email">
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">nacionalidad</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text">
+		</div>
+	</div>
+	<div class="form-group row">
+		<div class="col-lg-12 text-center">
+			<input type="reset" class="btn btn-secondary" value="Cancel">
+			<input type="button" class="btn btn-primary"
+				value="Save Changes">
+		</div>
+	</div>
+</form> 

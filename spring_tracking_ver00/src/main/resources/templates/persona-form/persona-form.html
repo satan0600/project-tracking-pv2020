@@ -1,0 +1,46 @@
+<form class="form" role="form" autocomplete="off" th:object="${personaForm}" th:action="${editMode} ?@{/editpersona} :@{/personaForm}" method="post">
+	<!--Es necesario para poder pasar la validacion del Model-->
+	<input class="form-control" type=hidden th:field="${personaForm.id}"  th:if="${editMode}">
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">apellido</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text" th:field="${personaForm.apellido}">
+		<!-- <div class="alert-danger" th:if="${#fields.hasErrors('nombreR')}" th:errors="*{nombreR}">Name Error</div>-->
+		</div> 
+	</div>
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">nombre</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text" th:field="${personaForm.nombres}">
+			<!-- <div class="alert-danger" th:if="${#fields.hasErrors('apellidoR')}" th:errors="*{apellidoR}">Name Error</div> -->
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">documento</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text"	th:field="${personaForm.documento}">
+			<!-- <div class="alert-danger" th:if="${#fields.hasErrors('nombreU')}" th:errors="*{nombreU}">Name Error</div> -->
+		</div>
+	</div>
+	
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">nacionalidad</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="password"	th:field="${personaForm.nacionalidad}">
+			<!-- <div class="alert-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Name Error</div> -->
+		</div>
+	</div>
+	<!-- <div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Confirm</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="password">
+		</div>
+	</div> -->
+	<div class="form-group row">
+		<div class="col-lg-12 text-center">
+			<a class="btn btn-secondary"  th:href="@{'/usuarioForm/cancel'}">Cancel</a>
+			<input type="submit" class="btn btn-primary" value="Save Changes" th:value="${editMode}?'Save Usuario':'Create Usuario'">
+		</div>
+	</div>
+ 	<div class="alert alert-danger text-center" th:if="${formErrorMessage}" th:text="${formErrorMessage}">Error MEssage</div>	
+</form>

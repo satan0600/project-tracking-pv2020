@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<div class="table-responsive">
+	<table id="barrioList"
+		class="table table-bordered table-hover table-striped">
+		<thead class="thead-light">
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">nombre</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="barrio: ${barrioList}">
+				<td th:text="${barrio.id}"></td>
+				<td th:text="${barrio.nombre}"></td>
+				<td><a href="#" th:href="@{'/editBarrio/'+ ${barrio.id}}"><i
+						class="fas fa-edit"></i></a> |<a href="#"
+					th:onclick="'javascript:confirmDelete(\''+ ${barrio.id} +'\');'"><i
+						class="fas fa-times"></i></a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
