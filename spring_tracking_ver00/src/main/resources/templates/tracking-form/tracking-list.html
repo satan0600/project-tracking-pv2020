@@ -18,10 +18,9 @@
 			<tr th:each="barrio: ${barrioList}">
 				<td th:text="${barrio.id}"></td>
 				<td th:text="${barrio.nombre}"></td>
-				<td><a href="#" th:href="@{'/editBarrio/'+ ${barrio.id}}"><i
-						class="fas fa-edit"></i></a> |<a href="#"
-					th:onclick="'javascript:confirmDelete(\''+ ${barrio.id} +'\');'"><i
-						class="fas fa-times"></i></a></td>
+				<td>
+					<a href="#" th:href="@{'/editBarrio/'+ ${barrio.id}}"><i class="fas fa-edit"></i></a> |
+				</td>
 			</tr>
 		</tbody>
 	</table>

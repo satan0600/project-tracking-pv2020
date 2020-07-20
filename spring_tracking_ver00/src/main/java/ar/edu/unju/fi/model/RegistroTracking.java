@@ -44,7 +44,7 @@ public class RegistroTracking implements Serializable{
 		@Autowired
 		@ManyToOne(fetch = FetchType.LAZY)
 		@JoinColumn
-		private Barrio localidad; // localidad de registro tracking
+		private Barrio barrio; // barrio de registro tracking
 		// @Column(name = "VALIDADORES")
 		@OneToMany(mappedBy = "registroTracking", cascade = CascadeType.ALL)
 		private List<ValidadorCondicionSanitaria> validadoresCS = new ArrayList<ValidadorCondicionSanitaria>();																		// condicion
@@ -67,12 +67,12 @@ public class RegistroTracking implements Serializable{
 		 * @param validadoresCS
 		 * @param detalleLugarRegistro
 		 */
-		public RegistroTracking(long id, LocalDateTime fechaHora, Barrio localidad,
+		public RegistroTracking(long id, LocalDateTime fechaHora, Barrio barrio,
 				List<ValidadorCondicionSanitaria> validadoresCS, String detalleLugarRegistro) {
 			super();
 			this.id = id;
 			this.fechaHora = fechaHora;
-			this.localidad = localidad;
+			this.barrio = barrio;
 			this.validadoresCS = validadoresCS;
 			this.detalleLugarRegistro = detalleLugarRegistro;
 		}
@@ -95,15 +95,15 @@ public class RegistroTracking implements Serializable{
 		/**
 		 * @return the localidad
 		 */
-		public Barrio getLocalidad() {
-			return localidad;
+		public Barrio getBarrio() {
+			return barrio;
 		}
 
 		/**
 		 * @param localidad the localidad to set
 		 */
-		public void setLocalidad(Barrio localidad) {
-			this.localidad = localidad;
+		public void setBarrio(Barrio barrio) {
+			this.barrio = barrio;
 		}
 
 		/**
@@ -150,7 +150,7 @@ public class RegistroTracking implements Serializable{
 
 		@Override
 		public String toString() {
-			return "RegistroTracking [id=" + id + ", fechaHora=" + fechaHora + ", localidad=" + localidad
+			return "RegistroTracking [id=" + id + ", fechaHora=" + fechaHora + ", barrio=" + barrio
 					+ ", validadoresCS=" + validadoresCS + ", detalleLugarRegistro=" + detalleLugarRegistro + "]";
 		}
 

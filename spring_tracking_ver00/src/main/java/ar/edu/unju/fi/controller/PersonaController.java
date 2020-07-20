@@ -63,11 +63,11 @@ public class PersonaController {
 				model.addAttribute("personaForm", persona);
 				model.addAttribute("formTab", "active");
 				model.addAttribute("personaList", personaService.getAllPersonas());
-				model.addAttribute("barrioList", barrioService.getAllBarrios());
+				//model.addAttribute("barrioList", barrioService.getAllBarrios());
 			}
 		}
 		model.addAttribute("personaList", personaService.getAllPersonas());
-		model.addAttribute("barrioList", barrioService.getAllBarrios());
+		//model.addAttribute("barrioList", barrioService.getAllBarrios());
 		return ("persona-form/persona-view");
 	}
 
